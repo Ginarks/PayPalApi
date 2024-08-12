@@ -21,8 +21,8 @@ const cancel_url = "http://localhost/cancel.php";
 const notify_url = "http://localhost/payment.php";
 
 app.post('/paypal', (req, res) => {
-  const { pass ,amount } = req.body;
-  if (pass == PASSPHRASE) {
+  const { password ,amount } = req.body;
+  if (password == PASSPHRASE) {
     if (amount > 0) {
       const urlSearchParams = new URLSearchParams();
       urlSearchParams.append("cmd", cmd);
